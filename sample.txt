@@ -1,0 +1,13 @@
+some-app/
+|-- public/
+|   |-- index.html
+|-- src/
+|   |-- components/
+|   |   |-- App.vue
+|   |   |-- List.vue
+|   |   |-- SubmissionForm.vue
+|   |   |-- SuccessMessage.vue
+|   |-- main.js
+|   |-- sendEmail.js
+|-- README.md
+|-- vue.config.js
