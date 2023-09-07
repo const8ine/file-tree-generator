@@ -6,8 +6,14 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-# Hard-coded file name
-input_file="sample.txt"  # Modify the path if needed
+# Check if the input file parameter is provided
+if [ $# -eq 0 ]; then
+    # Use "tree.txt" as the default input file if not provided
+    input_file="tree.txt"
+else
+    # Get the input file name from the command-line argument
+    input_file="$1"
+fi
 
 # Function to create a directory and files based on the input tree structure
 create_files() {
@@ -55,5 +61,5 @@ create_files() {
 root_directory="."
 mkdir -p "$root_directory"
 
-# Create the file and folder structure based on the hard-coded file name
+# Create the file and folder structure based on the provided or default input file name
 create_files "$root_directory" "$input_file"
